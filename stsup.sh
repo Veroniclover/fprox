@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # install packs
-pkg up -y
+pkg update -y && pkg upgrade -y
 pkg install termux-api -y
 
 # install the app
