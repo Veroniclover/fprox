@@ -1,5 +1,7 @@
 #!/bin/bash
 
+termux-setup-storage
+
 # install packs
 echo "[*] installing package..."
 pkg update -y
