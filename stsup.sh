@@ -17,6 +17,7 @@ echo "[/] done."
 
 # allow external apps
 echo "[*] reloading termux settings"
+sed -i 's|exec /system/bin/app_process -Xnoimage-dex2oat / com.termux.termuxam.Am "\$@"|# exec /system/bin/app_process -Xnoimage-dex2oat / com.termux.termuxam.Am "$@"\nexec /system/bin/app_process -Xverify:none -Xjitthreshold:1000 -Xusejit:true -Xmx128m / com.termux.termuxam.Am "$@"|' /data/data/com.termux/files/usr/bin/am
 sed -i 's/^# allow-external-apps = true/allow-external-apps = true/' ~/.termux/termux.properties
 termux-reload-settings || true
 echo "[/] done."
